@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Audio Processing</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<input type="file" accept="audio/*" capture id="recorder">
+<audio id="player" controls></audio>
+<script>
+  const recorder = document.getElementById('recorder');
+  const player = document.getElementById('player');
+
+  recorder.addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    const url = URL.createObjectURL(file);
+    // Do something with the audio file.
+    player.src = url;
+  });
+</script>
+
+
+</body>
+</html>
